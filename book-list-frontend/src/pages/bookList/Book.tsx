@@ -1,5 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
 import { SavedBook } from "../../model/Model";
 import getAxiosInstance from "../../services/Axios";
@@ -92,6 +93,7 @@ const Book: React.FC = () => {
           <h4>著者名:&nbsp;{book.author}</h4>
           <h4>出版元:&nbsp;{book.publisherName}</h4>
           <h4>出版日: {book.salesDate}</h4>
+          <h4>ISBN: {book.isbn}</h4>
           <p>{book.itemCaption}</p>
           {book.isRead && (
             <>
@@ -134,6 +136,12 @@ const Book: React.FC = () => {
           >
             削除
           </Button>
+          <br />
+          {book.isRead ? (
+            <Link to="/">読了リストに戻る</Link>
+          ) : (
+            <Link to="/wanted">読みたいリストに戻る</Link>
+          )}
         </>
       )}
       {!book && <span>データ取得中...</span>}
