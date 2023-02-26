@@ -1,9 +1,9 @@
 import { Button, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { SavedBook } from "../model/Model";
-import getAxiosInstance from "../services/Axios";
-import { handleError } from "../utils/Utils";
+import { SavedBook } from "../../model/Model";
+import getAxiosInstance from "../../services/Axios";
+import { handleError } from "../../utils/Utils";
 
 const Book: React.FC = () => {
   const { isbn } = useParams();

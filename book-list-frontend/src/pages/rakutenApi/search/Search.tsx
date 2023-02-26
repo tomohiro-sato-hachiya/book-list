@@ -27,10 +27,13 @@ const Search: React.FC = () => {
         aria-label="search"
         onClick={() => {
           if (keyword) {
+            const keywordParam = encodeURIComponent(
+              keyword.split("　").join(" ").replace(/\s/, " ")
+            );
             (async () => {
               const axiosInstance = await getAxiosInstance();
               axiosInstance
-                .get(`/rakutenApi?keyword=${keyword}`)
+                .get(`/rakutenApi?keyword=${keywordParam}`)
                 .then((response) => {
                   setApiBooks(response.data);
                 })

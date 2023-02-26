@@ -2,10 +2,10 @@ import { ImageList, Tab, Tabs } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import BookListItemComponent from "../components/BookListItemComponent";
-import { SavedBook } from "../model/Model";
-import getAxiosInstance from "../services/Axios";
-import { handleError } from "../utils/Utils";
+import BookListItemComponent from "../../components/BookListItemComponent";
+import { SavedBook } from "../../model/Model";
+import getAxiosInstance from "../../services/Axios";
+import { handleError } from "../../utils/Utils";
 
 const BookShelf: React.FC = () => {
   const params = useParams();
