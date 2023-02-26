@@ -6,14 +6,14 @@ import "@aws-amplify/ui-react/styles.css";
 import { Button } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from "./pages/rakutenApi/search/Search";
-import BookShelf from "./pages/Bookshelf";
-import Book from "./pages/Book";
+import BookShelf from "./pages/bookList/Bookshelf";
+import Book from "./pages/bookList/Book";
 
 Amplify.configure({
   aws_project_region: process.env.REACT_APP_AWS_PROJECT_REGION,
   aws_cognito_region: process.env.REACT_APP_AWS_COGNITO_REGION,
-  aws_user_pools_id: process.env.REACT_APP_AWS_USER_POOL_ID,
-  aws_user_pools_web_client_id: process.env.REACT_APP_AWS_USER_POOL_CLIENT_ID,
+  aws_user_pools_id: process.env.REACT_APP_AWS_USER_POOLS_ID,
+  aws_user_pools_web_client_id: process.env.REACT_APP_AWS_USER_POOLS_CLIENT_ID,
   aws_cognito_signup_attributes:
     process.env.REACT_APP_AWS_COGNITO_SIGNUP_ATTRIBUTES?.split(","),
   aws_cognito_verification_mechanisms:
